@@ -8,8 +8,8 @@ import { Post } from '../interface/post.interface';
 
 export class PostService {
 
-  arrPost: Post[] = [];
-  arrCat: Category[] = [];
+  private arrPost: Post[] = [];
+  private arrCat: Category[] = [];
 
   constructor() {
 
@@ -70,6 +70,7 @@ export class PostService {
       }
     ]
   }
+
 
 
 
