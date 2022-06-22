@@ -1,0 +1,11 @@
+#hero {
+    background-image: url('https://worldofwanderlust.com/wp-content/uploads/2014/09/IMG_0159.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center center; */
+    background-attachment: fixed;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
