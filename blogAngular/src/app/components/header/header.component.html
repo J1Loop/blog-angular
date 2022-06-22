@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand" [routerLink]="['/home']">My Blog App</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                         Categorías
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" [routerLink]="['/category/:gastronomia']">Gastronomía</a></li>
                         <li><a class="dropdown-item" [routerLink]="['/category/:rutas']">Rutas</a></li>
                         <li><a class="dropdown-item" [routerLink]="['/category/:consejos']">Consejos</a></li>
