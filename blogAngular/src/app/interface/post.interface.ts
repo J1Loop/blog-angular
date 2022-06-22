@@ -5,5 +5,5 @@ export interface Post {
     autor: string,
     imagen: string,
     fecha: string,
-    categoria: string[]
+    categoria: string
 }
