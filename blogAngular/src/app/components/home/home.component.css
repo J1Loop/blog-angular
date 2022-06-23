@@ -10,9 +10,12 @@
     align-items: center;
 }
 
-
 .imagencita {
     display: block;
     width: 100%;
     height: auto;
+}
+
+figure { /* bootstrap override */
+	margin: 0;
 }

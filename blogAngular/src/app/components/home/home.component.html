@@ -12,10 +12,11 @@
 
                 <div class="card" *ngIf="par === true">
                     <figure class="">
-                        <img [src]="post.imagen" class="imagencita card-img-top" [alt]="post.titulo">
+                        <img [src]="post.imagen" class="imagencita card-img-top" [alt]="post.titulo"
+                            [routerLink]="['/post', post.id]" role="button">
                     </figure>
                     <div class="card-body">
-                        <h4 class="card-title">{{post.titulo}}</h4>
+                        <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">{{post.titulo}}</h4>
                         <hr class="w-25">
                         <p class="card-text">{{post.texto}}</p>
                         <hr>
@@ -28,7 +29,7 @@
 
                 <div class="card" *ngIf="impar === true">
                     <div class="card-body">
-                        <h4 class="card-title">{{post.titulo}}</h4>
+                        <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">{{post.titulo}}</h4>
                         <hr class="w-25">
                         <p class="card-text">{{post.texto}}</p>
                         <hr>
@@ -38,7 +39,8 @@
                         </p>
                     </div>
                     <figure>
-                        <img [src]="post.imagen" class="imagencita card-img-bottom" [alt]="post.titulo">
+                        <img [src]="post.imagen" class="imagencita card-img-bottom" [alt]="post.titulo"
+                            [routerLink]="['/post', post.id]" role="button">
                     </figure>
                 </div>
             </article>
