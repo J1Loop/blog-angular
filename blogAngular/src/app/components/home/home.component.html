@@ -4,135 +4,44 @@
 
 <div>
     <div class="container">
-        <section class="row">
-            <h2 class="text-center">Aquí tienes alguno de nuestros artículos...</h2>
+        <section class="row mb-5">
+            <h2 class="text-center my-5">Aquí tienes algunos de nuestros artículos...</h2>
 
-            <article class="col-12 col-md-6 col-lg-4 my-3">
-                <div class="card">
+            <article class="col-12 col-md-6 col-lg-4 my-3"
+                *ngFor="let post of arrPosts; let par = even; let impar = odd">
+
+                <div class="card" *ngIf="par === true">
                     <figure class="">
-                        <img src="../../../assets/images/post-sample-image.jpg" class="imagencita card-img-top"
-                            alt="...">
+                        <img [src]="post.imagen" class="imagencita card-img-top" [alt]="post.titulo">
                     </figure>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional
-                            content.
-                            This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h4 class="card-title">{{post.titulo}}</h4>
+                        <hr class="w-25">
+                        <p class="card-text">{{post.texto}}</p>
+                        <hr>
+                        <p class="card-text"><small class="text-muted">{{post.fecha}} - Posted by {{post.autor}} -
+                                <span role="button"
+                                    [routerLink]="['/category', post.categoria.toLowerCase()]">{{post.categoria}}</span></small>
+                        </p>
                     </div>
                 </div>
-            </article>
 
-
-            <article class="col-12 col-md-6 col-lg-4 my-3">
-                <div class="card">
+                <div class="card" *ngIf="impar === true">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional
-                            content.
-                            This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    <figure>
-                        <img src="../../../assets/images/post-sample-image.jpg" class="imagencita card-img-bottom"
-                            alt="...">
-                    </figure>
-                </div>
-            </article>
-
-            <article class="col-12 col-md-6 col-lg-4 my-3">
-                <div class="card">
-                    <figure>
-                        <img src="../../../assets/images/post-sample-image.jpg" class="imagencita card-img-top"
-                            alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional
-                            content.
-                            This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-12 col-md-6 col-lg-4 my-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional
-                            content.
-                            This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h4 class="card-title">{{post.titulo}}</h4>
+                        <hr class="w-25">
+                        <p class="card-text">{{post.texto}}</p>
+                        <hr>
+                        <p class="card-text"><small class="text-muted">{{post.fecha}} - Posted by {{post.autor}} -
+                                <span role="button"
+                                    [routerLink]="['/category', post.categoria.toLowerCase()]">{{post.categoria}}</span></small>
+                        </p>
                     </div>
                     <figure>
-                        <img src="../../../assets/images/post-sample-image.jpg" class="imagencita card-img-bottom"
-                            alt="...">
+                        <img [src]="post.imagen" class="imagencita card-img-bottom" [alt]="post.titulo">
                     </figure>
                 </div>
             </article>
-
-            <article class="col-12 col-md-6 col-lg-4 my-3">
-                <div class="card">
-                    <figure>
-                        <img src="../../../assets/images/post-sample-image.jpg" class="imagencita card-img-top"
-                            alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional
-                            content.
-                            This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-12 col-md-6 col-lg-4 my-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional
-                            content.
-                            This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    <figure>
-                        <img src="../../../assets/images/post-sample-image.jpg" class="imagencita card-img-bottom"
-                            alt="...">
-                    </figure>
-                </div>
-            </article>
-
         </section>
     </div>
 </div>
-
-
-<!-- <div class="row g-3">
-            <article class="bg-dark rounded-3 col-12 col-md-6 col-lg-6 mx-auto">
-                <h3>TITULO DE POST</h3>
-                <figure>
-                    <img src="../../../assets/images/post-sample-image.jpg" class="img-fluid">
-                </figure>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus soluta cumque perferendis modi
-                    cupiditate eligendi unde, aliquam neque totam, culpa veniam! Fugiat hic modi alias voluptatum natus
-                    perferendis dignissimos doloribus?</p>
-                </article>
-
-                <article class="bg-dark rounded-3 col-12 col-md-6 col-lg-6 mx-auto">
-                    <h3>TITULO DE POST</h3>
-                    <figure>
-                        <img src="../../../assets/images/post-sample-image.jpg" class="img-fluid">
-                    </figure>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus soluta cumque perferendis modi
-                    cupiditate eligendi unde, aliquam neque totam, culpa veniam! Fugiat hic modi alias voluptatum natus
-                    perferendis dignissimos doloribus?</p>
-            </article>
-        </div> -->
