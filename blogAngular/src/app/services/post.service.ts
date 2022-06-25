@@ -15,13 +15,13 @@ export class PostService {
 
     this.arrCat = [
       {
-        titulo: 'Consejos'
+        titulo: 'Actividades'
       },
       {
         titulo: 'Rutas'
       },
       {
-        titulo: 'Actividades'
+        titulo: 'Consejos'
       },
       {
         titulo: 'Gastronomia'

@@ -13,12 +13,12 @@ export class HomeComponent implements OnInit {
   arrPosts: Post[] = [];
 
   constructor(
-    private postsService: PostService,
+    private postService: PostService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.arrPosts = this.postsService.getAllPosts();
+    this.arrPosts = this.postService.getAllPosts();
   }
 
 }

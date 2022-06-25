@@ -9,13 +9,16 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class HeaderComponent implements OnInit {
 
-  arrCat: Category[] = []
+  arrCats: Category[] = []
 
   constructor(
     private postService: PostService
   ) { }
 
   ngOnInit(): void {
+    this.arrCats = this.postService.getAllCats();
+    console.log(this.arrCats);
+
   }
 
 }
