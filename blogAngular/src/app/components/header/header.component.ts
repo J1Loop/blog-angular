@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/interface/category.interface';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  arrCat: Category[] = []
+
+  constructor(
+    private postService: PostService
+  ) { }
 
   ngOnInit(): void {
   }

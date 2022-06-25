@@ -5,7 +5,10 @@
 <div>
     <div class="container">
         <section class="row mb-5">
-            <h2 class="text-center my-5">Aquí tienes algunos de nuestros artículos...</h2>
+            <div>
+                <h2 class="text-center my-4">Aquí tienes algunos de nuestros artículos...</h2>
+                <hr class="w-50 mx-auto mb-5">
+            </div>
 
             <article class="col-12 col-md-6 col-lg-4 my-3"
                 *ngFor="let post of arrPosts; let par = even; let impar = odd">
@@ -15,27 +18,38 @@
                         <img [src]="post.imagen" class="imagencita card-img-top" [alt]="post.titulo"
                             [routerLink]="['/post', post.id]" role="button">
                     </figure>
-                    <div class="card-body">
-                        <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">{{post.titulo}}</h4>
-                        <hr class="w-25">
+                    <div class="card-body text-center">
+                        <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">
+                            {{post.titulo}}
+                        </h4>
+                        <hr class="w-50 mx-auto">
                         <p class="card-text">{{post.texto}}</p>
-                        <hr>
-                        <p class="card-text"><small class="text-muted">{{post.fecha}} - Posted by {{post.autor}} -
-                                <span role="button"
-                                    [routerLink]="['/category', post.categoria.toLowerCase()]">{{post.categoria}}</span></small>
+                        <hr class="w-50 mx-auto">
+                        <p class="card-text">
+                            <small class="text-muted fs-6">{{post.fecha}} - Posted by
+                                {{post.autor}} -
+                                <span role="button" [routerLink]="['/category', post.categoria.toLowerCase()]">
+                                    {{post.categoria}}
+                                </span>
+                            </small>
                         </p>
                     </div>
                 </div>
 
                 <div class="card" *ngIf="impar === true">
-                    <div class="card-body">
-                        <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">{{post.titulo}}</h4>
-                        <hr class="w-25">
+                    <div class="card-body text-center">
+                        <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">
+                            {{post.titulo}}
+                        </h4>
+                        <hr class="w-50 mx-auto">
                         <p class="card-text">{{post.texto}}</p>
-                        <hr>
-                        <p class="card-text"><small class="text-muted">{{post.fecha}} - Posted by {{post.autor}} -
-                                <span role="button"
-                                    [routerLink]="['/category', post.categoria.toLowerCase()]">{{post.categoria}}</span></small>
+                        <hr class="w-50 mx-auto">
+                        <p class="card-text">
+                            <small class="text-muted fs-6">{{post.fecha}} - Posted by {{post.autor}} -
+                                <span role="button" [routerLink]="['/category', post.categoria.toLowerCase()]">
+                                    {{post.categoria}}
+                                </span>
+                            </small>
                         </p>
                     </div>
                     <figure>

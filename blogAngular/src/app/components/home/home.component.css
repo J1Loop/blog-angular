@@ -19,3 +19,7 @@
 figure { /* bootstrap override */
 	margin: 0;
 }
+
+.fs-6 { /* bootstrap override */
+	font-size: 0.7rem !important;
+}
