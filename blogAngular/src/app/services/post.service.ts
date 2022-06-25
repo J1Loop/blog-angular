@@ -10,6 +10,7 @@ export class PostService {
 
   private arrPost: Post[] = [];
   private arrCat: Category[] = [];
+  private postID: number = 7;
 
   constructor() {
 
@@ -90,11 +91,6 @@ export class PostService {
 
   }
 
-  // getDate() {
-  //   let fecha = new Date()
-  //   console.log(fecha);
-  // }
-
   getAllPosts(): Post[] {
     return this.arrPost;
   }
@@ -102,6 +98,21 @@ export class PostService {
   getAllCats(): Category[] {
     return this.arrCat;
   }
+
+  getById(pId: number): Post | any {
+    return this.arrPost.find(post => post.id === pId);
+  }
+
+  addPost(pForm: any): boolean | any {
+    pForm.id = this.postID;
+    let pushReturnIndex = this.arrPost.push(pForm);
+    this.postID++
+    // console.log(this.arrPost, 'NEXT_ID ' + this.postID);
+
+    return (pushReturnIndex) ? true : false
+  }
+
+
 
 
 
