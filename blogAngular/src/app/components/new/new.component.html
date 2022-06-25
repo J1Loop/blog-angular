@@ -1,31 +1,46 @@
 <div class="container mt-3">
+    <h1>Formulario de nuevo post.</h1>
+    <hr>
+
     <form [formGroup]="newPostForm" (ngSubmit)="getDataForm()">
 
-        <div class="my-2">
-            <label for="titulo" class="form-label">Título del Post</label>
-            <input class="form-control" type="text" id="titulo" formControlName="titulo"
-                placeholder="Introduce un título de post.">
+        <div class="my-2 form-floating">
+            <input class="form-control" type="text" id="titulo" formControlName="titulo" placeholder="">
+            <label for="titulo" class="form-label">Título del post</label>
         </div>
 
-        <div class="my-2">
+        <div class="my-2 form-floating">
+            <input class="form-control" type="text" id="autor" formControlName="autor" placeholder="">
             <label for="autor" class="form-label">Autor</label>
-            <input class="form-control" type="text" id="autor" formControlName="autor"
-                placeholder="Introduce tu nombre">
         </div>
 
-        <div class="my-2">
+        <div class="my-2 form-floating">
+            <input class="form-control" type="text" id="imagen" formControlName="imagen" placeholder="">
+            <label for="imagen" class="form-label">Imagen del post</label>
+        </div>
+
+        <div class="my-4">
             <label for="categoria" class="form-label">Selecciona una categoría</label>
             <select class="form-select" id="categoria" formControlName="categoria">
                 <option value="">Selecciona una categoría</option>
+                <option *ngFor="let categoria of arrCats" [value]="categoria.titulo.toLowerCase()">
+                    {{categoria.titulo}}
+                </option>
             </select>
         </div>
 
-        <div class="my-2">
+
+        <div class="my-4 form-floating">
+            <textarea class="form-control" id="texto" formControlName="texto" maxlength="120" style="height: 90px"
+                placeholder=""></textarea>
             <label for="texto" class="form-label">Introduce un breve texto</label>
-            <textarea class="form-control" id="texto" formControlName="texto" maxlength="40" rows="4"
-                placeholder="Introduce un texto introductorio..."></textarea>
         </div>
 
-        <input class="btn btn-success mt-2" type="submit" value="Crear Post" [disabled]="!newPostForm.valid">
+        <div class="my-2 form-floating">
+            <input class="form-control" type="date" id="fecha" formControlName="fecha">
+            <label for="fecha" class="form-label">Selecciona una fecha</label>
+        </div>
+
+        <input class=" btn btn-success mt-2" type="submit" value="Crear Post" [disabled]="!newPostForm.valid">
     </form>
 </div>
