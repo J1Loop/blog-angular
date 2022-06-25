@@ -14,7 +14,7 @@
                 *ngFor="let post of arrPosts; let par = even; let impar = odd">
 
                 <div class="card" *ngIf="par === true">
-                    <figure class="">
+                    <figure>
                         <img [src]="post.imagen" class="imagencita card-img-top" [alt]="post.titulo"
                             [routerLink]="['/post', post.id]" role="button">
                     </figure>
