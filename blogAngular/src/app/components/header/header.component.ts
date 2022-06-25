@@ -17,8 +17,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.arrCats = this.postService.getAllCats();
-    console.log(this.arrCats);
-
+    // console.log(this.arrCats);
   }
 
 }

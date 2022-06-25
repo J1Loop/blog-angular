@@ -9,6 +9,7 @@ import { PostComponent } from './components/post/post.component';
 import { CategoryComponent } from './components/category/category.component';
 import { E404Component } from './components/e404/e404.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,31 @@
-<p>new works!</p>
+<div class="container mt-3">
+    <form [formGroup]="newPostForm" (ngSubmit)="getDataForm()">
+
+        <div class="my-2">
+            <label for="titulo" class="form-label">Título del Post</label>
+            <input class="form-control" type="text" id="titulo" formControlName="titulo"
+                placeholder="Introduce un título de post.">
+        </div>
+
+        <div class="my-2">
+            <label for="autor" class="form-label">Autor</label>
+            <input class="form-control" type="text" id="autor" formControlName="autor"
+                placeholder="Introduce tu nombre">
+        </div>
+
+        <div class="my-2">
+            <label for="categoria" class="form-label">Selecciona una categoría</label>
+            <select class="form-select" id="categoria" formControlName="categoria">
+                <option value="">Selecciona una categoría</option>
+            </select>
+        </div>
+
+        <div class="my-2">
+            <label for="texto" class="form-label">Introduce un breve texto</label>
+            <textarea class="form-control" id="texto" formControlName="texto" maxlength="40" rows="4"
+                placeholder="Introduce un texto introductorio..."></textarea>
+        </div>
+
+        <input class="btn btn-success mt-2" type="submit" value="Crear Post" [disabled]="!newPostForm.valid">
+    </form>
+</div>
