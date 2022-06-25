@@ -10,6 +10,7 @@ export class PostService {
 
   private arrPost: Post[] = [];
   private arrCat: Category[] = [];
+  private postID: number = 7;
 
   constructor() {
 
@@ -55,7 +56,7 @@ export class PostService {
         titulo: 'Titulo de post 3',
         texto: 'Este es el texto que describe el post número 3. Este es el texto que describe el post número 3.',
         autor: 'Pedro',
-        imagen: 'https://picsum.photos/id/3/200/300',
+        imagen: 'https://picsum.photos/id/100/200/300',
         fecha: '13-05-2022',
         categoria: 'Rutas'
       },
@@ -64,7 +65,7 @@ export class PostService {
         titulo: 'Titulo de post 4',
         texto: 'Este es el texto que describe el post número 4. Este es el texto que describe el post número 4.',
         autor: 'Dani',
-        imagen: 'https://picsum.photos/id/24/200/300',
+        imagen: 'https://picsum.photos/id/316/200/300',
         fecha: '20-06-2022',
         categoria: 'Actividades'
       },
@@ -73,7 +74,7 @@ export class PostService {
         titulo: 'Titulo de post 5',
         texto: 'Este es el texto que describe el post número 5. Este es el texto que describe el post número 5.',
         autor: 'Raúl',
-        imagen: 'https://picsum.photos/id/35/200/300',
+        imagen: 'https://picsum.photos/id/212/200/300',
         fecha: '01-10-2022',
         categoria: 'Alojamiento'
       },
@@ -82,18 +83,13 @@ export class PostService {
         titulo: 'Titulo de post 6',
         texto: 'Este es el texto que describe el post número 6. Este es el texto que describe el post número 6.',
         autor: 'Lolo',
-        imagen: 'https://picsum.photos/id/46/200/300',
+        imagen: 'https://picsum.photos/id/211/200/300',
         fecha: '28-02-2023',
         categoria: 'Actividades'
       }
     ];
 
   }
-
-  // getDate() {
-  //   let fecha = new Date()
-  //   console.log(fecha);
-  // }
 
   getAllPosts(): Post[] {
     return this.arrPost;
@@ -102,6 +98,21 @@ export class PostService {
   getAllCats(): Category[] {
     return this.arrCat;
   }
+
+  getById(pId: number): Post | any {
+    return this.arrPost.find(post => post.id === pId);
+  }
+
+  addPost(pForm: any): boolean | any {
+    pForm.id = this.postID;
+    let pushReturnIndex = this.arrPost.push(pForm);
+    this.postID++
+    // console.log(this.arrPost, 'NEXT_ID ' + this.postID);
+
+    return (pushReturnIndex) ? true : false
+  }
+
+
 
 
 
