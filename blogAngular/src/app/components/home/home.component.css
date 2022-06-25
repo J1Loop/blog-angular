@@ -1,5 +1,5 @@
 #hero {
-    background-image: url('../../../assets/images/home-bg.jpg');
+    background-image: url('../../../assets/images/bg2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -10,12 +10,10 @@
 }
 
 #post-articles {
-    background-image: url('../../../assets/images/post-articles-bg.jpg');
+    background-image: url('../../../assets/images/mark-basarab-z8ct_Q3oCqM-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    /* filter:blur(8px) */
 }
 
 .imagencita {
