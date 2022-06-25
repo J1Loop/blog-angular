@@ -1,0 +1,25 @@
+#hero {
+    background-image: url('../../../assets/images/home-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center center; */
+    background-attachment: fixed;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagencita {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figure { /* bootstrap override */
+	margin: 0;
+}
+
+.fs-6 { /* bootstrap override */
+	font-size: 0.7rem !important;
+}
