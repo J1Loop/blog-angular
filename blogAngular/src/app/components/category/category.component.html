@@ -1,38 +1,37 @@
-<div class="container mt-5 pt-3">
+<div class="container mt-5">
+    <section class="row pt-2">
 
-    <h1 class="text-center my-5">Colección de posts de {{catTitle}}</h1>
+        <h1 class="text-center my-3">Colección de posts de {{catTitle}}</h1>
 
-    <section class="row">
-        <article *ngFor="let post of arrPosts" class="col-12 col-md-6 col-lg-4 card shadow rounded-3 my-5 mx-2 py-3">
-            <figure class="mx-auto">
-                <img role="button" [routerLink]="['/post', post.id]" class="res-img" [src]="post.imagen">
-            </figure>
-            <div class="text-center mt-3">
-                <h3 class="card-title">
-                    {{post.titulo}}
-                </h3>
+
+        <article class="col-12 col-md-6 col-lg-4 my-3" *ngFor="let post of arrPosts">
+            <div class="card shadow rounded-3">
+                <figure class="mx-auto pt-4">
+                    <img role="button" [routerLink]="['/post', post.id]" class="res-img" [src]="post.imagen">
+                </figure>
+                <div class="card-body text-center">
+                    <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">
+                        {{post.titulo}}
+                    </h4>
+                    <aside>
+                        <hr class="mx-auto w-25">
+                        <p class="card-text text-center">
+                            <small class="text-muted fs-6">{{post.fecha}} - Posted by
+                                {{post.autor}} - {{post.categoria}}
+                            </small>
+                        </p>
+                        <hr class="mx-auto w-25">
+                        <nav class="mx-3 card-body text-center">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium vel illum
+                                repudiandae
+                                alias
+                                eveniet eum nam quaerat sapiente ab nulla. Consequatur molestiae suscipit vitae, optio
+                                doloremque
+                                quo facere? Quod rem labore, aut perferendis perspiciatis deserunt aliquam hic
+                                voluptates
+                                impedit
+                                fugit asperiores unde eveniet culpa illo, minus omnis, dolores consequatur amet?</p>
+                        </nav>
+                    </aside>
+                </div>
             </div>
-            <aside>
-                <hr class="mx-auto w-25">
-                <p class="card-text text-center">
-                    <small class="text-muted fs-6">{{post.fecha}} - Posted by
-                        {{post.autor}} - {{post.categoria}}
-                    </small>
-                </p>
-                <hr class="mx-auto w-25">
-                <nav class="mx-3 card card-body text-center">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium vel illum
-                        repudiandae
-                        alias
-                        eveniet eum nam quaerat sapiente ab nulla. Consequatur molestiae suscipit vitae, optio
-                        doloremque
-                        quo facere? Quod rem labore, aut perferendis perspiciatis deserunt aliquam hic
-                        voluptates
-                        impedit
-                        fugit asperiores unde eveniet culpa illo, minus omnis, dolores consequatur amet?</p>
-                </nav>
-            </aside>
-        </article>
-
-    </section>
-</div>
