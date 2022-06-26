@@ -1,1 +1,30 @@
-<p>category works!</p>
+<div class="container">
+
+    <h1 class="text-center my-5">Posts de CATEGORIA</h1>
+
+    <section class="row py-4">
+
+        <article class="col-12 col-md-8 card shadow rounded-3 my-5 py-3" *ngFor="let post of arrPosts">
+            <figure class="mx-auto">
+                <img class="blurry" [src]="post.imagen">
+                <img class="res-img" [src]="post.imagen">
+                <img class="blurry" [src]="post.imagen">
+            </figure>
+            <div class="text-center mt-3">
+                <h3>{{post.titulo}}</h3>
+            </div>
+        </article>
+
+        <aside class="d-none d-md-block col-md-4 p-4 card shadow">
+            <h3>TITULO</h3>
+            <hr class="center w-25">
+            <nav>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium vel illum repudiandae alias
+                    eveniet eum nam quaerat sapiente ab nulla. Consequatur molestiae suscipit vitae, optio doloremque
+                    quo facere? Quod rem labore, aut perferendis perspiciatis deserunt aliquam hic voluptates impedit
+                    fugit asperiores unde eveniet culpa illo, minus omnis, dolores consequatur amet?</p>
+            </nav>
+        </aside>
+
+    </section>
+</div>

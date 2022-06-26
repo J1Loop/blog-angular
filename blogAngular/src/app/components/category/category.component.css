@@ -1,0 +1,25 @@
+
+figure {
+    margin: 0;
+}
+
+.res-img {
+    width: 400px;
+    height: 300px;
+}
+
+.blurry {
+    filter: blur(10px);
+    transform: rotateY(180deg);
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+@media (max-width: 1400px) {
+
+    .blurry {
+        display: none;
+    }
+}
