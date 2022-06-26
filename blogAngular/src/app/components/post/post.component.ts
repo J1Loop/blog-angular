@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/interface/post.interface';
 import { PostService } from 'src/app/services/post.service';
 
@@ -11,13 +11,11 @@ import { PostService } from 'src/app/services/post.service';
 export class PostComponent implements OnInit {
 
   mySinglePost: Post | any;
-  arrPostsByCat: Post[] = [];
-  prev: any;
-  next: any;
 
   constructor(
     private postService: PostService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +29,12 @@ export class PostComponent implements OnInit {
       console.log(this.mySinglePost);
     })
 
+  }
+
+  deletePost(pId: number): void {
+    // console.log(pId);
+    this.postService.deleteById(pId);
+    this.router.navigate(['/home'])
   }
 
 }

@@ -92,6 +92,7 @@ export class PostService {
   }
 
   getAllPosts(): Post[] {
+    console.log(this.arrPost);
     return this.arrPost;
   }
 
@@ -112,8 +113,13 @@ export class PostService {
     let pushReturnIndex = this.arrPost.push(pForm);
     this.postID++
     // console.log(this.arrPost, 'NEXT_ID ' + this.postID);
-
     return (pushReturnIndex) ? true : false
+  }
+
+  deleteById(pId: number) {
+    this.arrPost = this.arrPost.filter(post => post.id !== pId);
+    // console.log(this.arrPost);
+    this.getAllPosts();
   }
 
 

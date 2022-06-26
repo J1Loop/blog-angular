@@ -1,11 +1,11 @@
-<div class="bg-secondary h-100">
+<div class="bg-light vh-100">
     <section class="container mt-5 pt-5">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-8">
                 <h3>{{ mySinglePost.titulo }}</h3>
                 <hr>
-                <ul class="list-group-item shadow">
-                    <nav>
+                <ul class="list-group-item shadow rounded-3">
+                    <nav class="d-flex justify-content-between mb-4">
                         <ol class="breadcrumb pt-2 px-3">
                             <li class="breadcrumb-item"><a href="" [routerLink]="['/home']">Home</a></li>
                             <li class="breadcrumb-item"><a href=""
@@ -13,6 +13,9 @@
                             </li>
                             <li class="breadcrumb-item active">{{mySinglePost.titulo}}</li>
                         </ol>
+                        <button class="btn btn-outline-primary px-3 mt-2"
+                            [routerLink]="['/category', mySinglePost.categoria]"><i
+                                class="fa-solid fa-list"></i></button>
                     </nav>
                     <li class="list-group-item">
                         <h4 class="p-3 text-center">{{ mySinglePost.texto }}</h4>
@@ -27,32 +30,69 @@
                             <img class="big-img img-fluid shadow" [src]="mySinglePost.imagen"
                                 [alt]="mySinglePost.titulo">
                         </figure>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsam nostrum sequi ipsa
-                            a.
-                            Reprehenderit ipsa quod nam ipsam ea enim harum. Perspiciatis sapiente corporis doloribus
-                            quae
-                            vel, temporibus iusto ipsum consequatur itaque placeat. Suscipit odio sed ipsum laboriosam
-                            perspiciatis enim distinctio magni consequuntur est! Maiores nobis repellendus perspiciatis
-                            voluptatibus!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquam optio maxime modi,
-                            tempora eum ipsa in labore aliquid blanditiis.</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vitae, nemo ad
-                            asperiores
-                            consequuntur dicta. Quibusdam optio eius iste pariatur delectus quisquam magnam. Doloribus
-                            itaque aperiam perspiciatis veniam maiores hic?</p>
+
+                        <div>
+                            <div>
+                                <div class="collapse collapse-horizontal position-absolute" id="editCollapse">
+                                    <div class="card card-body responsive-width">
+                                        <textarea rows="10"></textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsam nostrum sequi
+                                ipsa
+                                a.
+                                Reprehenderit ipsa quod nam ipsam ea enim harum. Perspiciatis sapiente corporis
+                                doloribus
+                                quae
+                                vel, temporibus iusto ipsum consequatur itaque placeat. Suscipit odio sed ipsum
+                                laboriosam
+                                perspiciatis enim distinctio magni consequuntur est! Maiores nobis repellendus
+                                perspiciatis
+                                voluptatibus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquam optio maxime
+                                modi,
+                                tempora eum ipsa in labore aliquid blanditiis.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vitae, nemo ad
+                                asperiores
+                                consequuntur dicta. Quibusdam optio eius iste pariatur delectus quisquam magnam.
+                                Doloribus
+                                itaque aperiam perspiciatis veniam maiores hic?</p>
+
+                        </div>
+
+
+
                     </li>
 
-                    <div class="d-flex justify-content-around mt-3">
-                        <button class="btn btn-primary px-3 py-2" [routerLink]="['/post', prev]">BACK</button>
-                        <button class="btn btn-primary px-3 py-2" [routerLink]="['/post', next]">NEXT</button>
+                    <div class="d-flex justify-content-around my-4">
+                        <button class="btn btn-outline-primary px-3 py-2 w-25" [routerLink]="['/home']">Vuelta a home <i
+                                class=" px-2 fa-solid fa-house"></i></button>
                     </div>
 
                 </ul>
             </div>
 
             <figure class="d-sm-none d-md-none d-lg-block col-lg-4">
-                <img class="big-img img-fluid" [src]="mySinglePost.imagen" [alt]="mySinglePost.titulo">
+                <img class="big-img img-fluid shadow" [src]="mySinglePost.imagen" [alt]="mySinglePost.titulo">
+                <div class="d-flex justify-content-evenly mt-4">
+                    <button class="btn btn-danger" (click)="deletePost(mySinglePost.id)"><i
+                            class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#editCollapse"><i
+                            class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="btn btn-warning"><i class="fa-solid fa-star"></i></button>
+                </div>
             </figure>
         </div>
     </section>
 </div>
+
+<aside class="d-lg-none d-md-block d-sm-block position-fixed top-25 bg-dark rounded-3">
+    <div class="d-flex flex-column flex-grow-0 my-4 mx-2">
+        <button class="btn btn-danger" (click)="deletePost(mySinglePost.id)"><i class="fa-solid fa-trash"></i></button>
+        <button class="btn btn-primary my-2" data-bs-toggle="collapse" data-bs-target="#editCollapse"><i
+                class="fa-solid fa-pen-to-square"></i></button>
+        <button class="btn btn-warning"><i class="fa-solid fa-star"></i></button>
+    </div>
+</aside>
