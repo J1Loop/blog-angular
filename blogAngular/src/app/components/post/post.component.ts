@@ -11,6 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 export class PostComponent implements OnInit {
 
   mySinglePost: Post | any;
+  favSwitch: boolean = false;
   textoSinglePost: string = `
   <strong class="text-primary">EDÍTAME COMO HTML DÁNDOLE AL BOTÓN AZUL</strong>
   <br class="my-4">
@@ -58,6 +59,18 @@ export class PostComponent implements OnInit {
 
   editTexto($event: any): void {
     this.textoSinglePost = $event.target.value
+  }
+
+  favPostSwitch(pId: number): void {
+    this.favSwitch = !this.favSwitch; // abajo podría ser igual que esto pero mejor lo dejo legible...
+
+    if (this.favSwitch === true) {
+      this.mySinglePost.fav = true
+    } else {
+      this.mySinglePost.fav = false
+    }
+    // console.log(this.mySinglePost);
+
   }
 
 }

@@ -11,8 +11,17 @@
     width: 780px;
 }
 
+.btn-fav {
+    color: #ffc107;
+	background-color: #fff;
+	border-color: #aaa;
+}
 
-
+.btn-warning {
+	color: #000;
+	background-color: #ffc107;
+	border-color: #ffc107;
+}
 
 
 @media(max-width:1399px) {
