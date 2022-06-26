@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/interface/post.interface';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-category',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  arrPosts: Post[] = [];
+
+  constructor(
+    private postService: PostService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      // console.log(params);
+      let category = params['catTitle'];
+      this.arrPosts = this.postService.getByCategory(category[0].toUpperCase() + category.substring(1));
+
+    })
   }
 
 }

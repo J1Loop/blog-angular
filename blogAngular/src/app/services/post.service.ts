@@ -86,7 +86,7 @@ export class PostService {
         imagen: 'https://picsum.photos/id/211/200/300',
         fecha: '28-02-2023',
         categoria: 'Actividades'
-      }
+      },
     ];
 
   }
@@ -101,6 +101,10 @@ export class PostService {
 
   getById(pId: number): Post | any {
     return this.arrPost.find(post => post.id === pId);
+  }
+
+  getByCategory(pCategory: string): Post | any {
+    return this.arrPost.filter(post => post.categoria === pCategory);
   }
 
   addPost(pForm: any): boolean | any {
