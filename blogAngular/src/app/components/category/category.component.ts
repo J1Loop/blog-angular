@@ -21,7 +21,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      // console.log(params);
       let category = params['catTitle'];
       this.arrPosts = this.postService.getByCategory(category[0].toUpperCase() + category.substring(1));
 

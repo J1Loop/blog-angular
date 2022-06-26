@@ -1,6 +1,5 @@
 .big-img {
     margin-top: 80px;
-    /* margin-left: 20px; */
     height: 570px;
     width: 500px;
     border: none;
@@ -27,7 +26,6 @@
 @media(max-width:1399px) {
 
     .responsive-width {
-        /* border: 1px solid red; */
         width: 660px;
     }
 }
@@ -35,7 +33,6 @@
 @media(max-width:1199px) {
 
     .responsive-width {
-        /* border: 1px solid aqua; */
         width: 560px;
     }
 }
@@ -55,7 +52,6 @@
     }
 
     .responsive-width {
-        /* border: 1px solid lime; */
         width: 640px;
     }
 }
@@ -63,7 +59,13 @@
 @media(max-width:767px) {
 
     .responsive-width {
-        /* border: 1px solid purple; */
+        width: 460px;
+    }
+}
+
+@media(max-width:510px) {
+
+    .responsive-width {
         width: 420px;
     }
 }
@@ -71,8 +73,7 @@
 @media(max-width:440px) {
 
     .responsive-width {
-        /* border: 1px solid tomato; */
-        width: 320px;
+        width: 350px;
     }
 }
 
