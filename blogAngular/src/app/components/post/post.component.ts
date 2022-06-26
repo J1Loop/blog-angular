@@ -11,6 +11,9 @@ import { PostService } from 'src/app/services/post.service';
 export class PostComponent implements OnInit {
 
   mySinglePost: Post | any;
+  arrPostsByCat: Post[] = [];
+  prev: any;
+  next: any;
 
   constructor(
     private postService: PostService,
@@ -21,12 +24,11 @@ export class PostComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
 
-      console.log(params);
+      // console.log(params);
       let idPost = parseInt(params['idPost']);
 
       this.mySinglePost = this.postService.getById(idPost);
       console.log(this.mySinglePost);
-
     })
 
   }
