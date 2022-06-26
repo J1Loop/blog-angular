@@ -1,0 +1,56 @@
+<div class="bg-secondary h-100">
+    <section class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-8">
+                <h3>{{ mySinglePost.titulo }}</h3>
+                <hr>
+                <ul class="list-group-item shadow">
+                    <nav>
+                        <ol class="breadcrumb pt-2 px-3">
+                            <li class="breadcrumb-item"><a href="" [routerLink]="['/home']">Home</a></li>
+                            <li class="breadcrumb-item"><a href=""
+                                    [routerLink]="['/category', mySinglePost.categoria.toLowerCase()]">{{mySinglePost.categoria}}</a>
+                            </li>
+                            <li class="breadcrumb-item active">{{mySinglePost.titulo}}</li>
+                        </ol>
+                    </nav>
+                    <li class="list-group-item">
+                        <h4 class="p-3 text-center">{{ mySinglePost.texto }}</h4>
+                    </li>
+                    <li class="list-group-item text-center text-muted py-3">
+                        Written by {{mySinglePost.autor}} in {{mySinglePost.categoria}} at {{mySinglePost.fecha}}
+                    </li>
+
+                    <li class="list-group-item p-4 text-muted">
+
+                        <figure class="d-sm-flex d-md-flex d-lg-none">
+                            <img class="big-img img-fluid shadow" [src]="mySinglePost.imagen"
+                                [alt]="mySinglePost.titulo">
+                        </figure>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsam nostrum sequi ipsa
+                            a.
+                            Reprehenderit ipsa quod nam ipsam ea enim harum. Perspiciatis sapiente corporis doloribus
+                            quae
+                            vel, temporibus iusto ipsum consequatur itaque placeat. Suscipit odio sed ipsum laboriosam
+                            perspiciatis enim distinctio magni consequuntur est! Maiores nobis repellendus perspiciatis
+                            voluptatibus!</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquam optio maxime modi,
+                            tempora eum ipsa in labore aliquid blanditiis.</p>
+
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vitae, nemo ad
+                            asperiores
+                            consequuntur dicta. Quibusdam optio eius iste pariatur delectus quisquam magnam. Doloribus
+                            itaque aperiam perspiciatis veniam maiores hic?</p>
+                    </li>
+
+                </ul>
+            </div>
+
+            <figure class="d-sm-none d-md-none d-lg-block col-lg-4">
+                <img class="big-img img-fluid" [src]="mySinglePost.imagen" [alt]="mySinglePost.titulo">
+            </figure>
+        </div>
+    </section>
+</div>
