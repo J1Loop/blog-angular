@@ -22,6 +22,17 @@
     height: auto;
 }
 
+article{
+    transition: 500ms ease-in-out;
+}
+
+article:hover {
+    transform: translate(3px,5px);
+    transition: 500ms ease-in-out;
+}
+
+
+
 figure { /* bootstrap override */
 	margin: 0;
 }
