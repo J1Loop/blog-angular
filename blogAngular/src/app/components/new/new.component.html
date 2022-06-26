@@ -1,5 +1,5 @@
-<div class="container mt-5 pt-5">
-    <h1>Formulario de nuevo post.</h1>
+<div class="container mt-5">
+    <h1 class="pt-5">Formulario de nuevo post.</h1>
     <hr class="mb-5">
 
     <form class="border-secondary border-1 border rounded-3 shadow p-4" [formGroup]="newPostForm"
@@ -54,7 +54,7 @@
             <label for="categoria" class="form-label">Selecciona una categoría</label>
             <select class="form-select" id="categoria" formControlName="categoria">
                 <option value="">Selecciona una categoría</option>
-                <option *ngFor="let categoria of arrCats" [value]="categoria.titulo.toLowerCase()">
+                <option *ngFor="let categoria of arrCats" [value]="categoria.titulo">
                     {{categoria.titulo}}
                 </option>
             </select>
