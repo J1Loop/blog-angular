@@ -11,6 +11,24 @@ import { PostService } from 'src/app/services/post.service';
 export class PostComponent implements OnInit {
 
   mySinglePost: Post | any;
+  textoSinglePost: string = `
+  <strong class="text-primary">EDÍTAME COMO HTML DÁNDOLE AL BOTÓN AZUL</strong>
+  <br class="my-4">
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsam nostrum sequi ipsa a.
+    Reprehenderit ipsa quod nam ipsam ea enim harum. Perspiciatis sapiente corporis doloribus quae vel, temporibus iusto
+    ipsum consequatur itaque placeat. Suscipit odio sed ipsum laboriosam perspiciatis enim distinctio magni consequuntur
+    est! Maiores nobis repellendus perspiciatis voluptatibus!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquam optio maxime modi, tempora eum ipsa in
+    labore aliquid blanditiis.
+  </p>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vitae, nemo ad asperiores consequuntur dicta.
+    Quibusdam optio eius iste pariatur delectus quisquam magnam.
+    Doloribus itaque aperiam perspiciatis veniam maiores hic?
+  </p>`
 
   constructor(
     private postService: PostService,
@@ -35,6 +53,11 @@ export class PostComponent implements OnInit {
     // console.log(pId);
     this.postService.deleteById(pId);
     this.router.navigate(['/home'])
+  }
+
+
+  editTexto($event: any): void {
+    this.textoSinglePost = $event.target.value
   }
 
 }
