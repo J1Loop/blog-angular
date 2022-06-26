@@ -11,6 +11,8 @@ import { PostService } from 'src/app/services/post.service';
 export class CategoryComponent implements OnInit {
 
   arrPosts: Post[] = [];
+  catTitle: string = '';
+  collapseID: string = ''
 
   constructor(
     private postService: PostService,
@@ -23,6 +25,8 @@ export class CategoryComponent implements OnInit {
       let category = params['catTitle'];
       this.arrPosts = this.postService.getByCategory(category[0].toUpperCase() + category.substring(1));
 
+      this.catTitle = category
+      this.collapseID = 'collapse-'
     })
   }
 
