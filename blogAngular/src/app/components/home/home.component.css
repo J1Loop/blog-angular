@@ -1,0 +1,42 @@
+#hero {
+    background-image: url('../../../assets/images/bg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#post-articles {
+    background-image: url('../../../assets/images/mark-basarab-z8ct_Q3oCqM-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.imagencita {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+article{
+    transition: 500ms ease-in-out;
+}
+
+article:hover {
+    transform: translate(3px,5px);
+    transition: 500ms ease-in-out;
+}
+
+
+
+figure { /* bootstrap override */
+	margin: 0;
+}
+
+.fs-6 { /* bootstrap override */
+	font-size: 0.7rem !important;
+}

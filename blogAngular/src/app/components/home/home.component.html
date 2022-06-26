@@ -1,0 +1,66 @@
+<div id="hero" class="mb-5">
+    <h1 class="text-white bg-black bg-opacity-50 p-4 border-1 rounded-pill">TITULO DEL BLOG</h1>
+</div>
+
+<div>
+    <div>
+        <hr class="w-50 mx-auto mt-5">
+        <h2 class="text-center my-4">Aquí tienes algunos de nuestros artículos...</h2>
+        <hr class="w-50 mx-auto mb-5">
+    </div>
+
+    <div id="post-articles">
+        <div class="container">
+            <section class="row py-5">
+                <article class="col-12 col-md-6 col-lg-4 my-3"
+                    *ngFor="let post of arrPosts; let par = even; let impar = odd">
+
+                    <div class="card" *ngIf="par === true">
+                        <figure>
+                            <img [src]="post.imagen" class="imagencita card-img-top" [alt]="post.titulo"
+                                [routerLink]="['/post', post.id]" role="button">
+                        </figure>
+                        <div class="card-body text-center">
+                            <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">
+                                {{post.titulo}}
+                            </h4>
+                            <hr class="w-50 mx-auto">
+                            <p class="card-text">{{post.texto}}</p>
+                            <hr class="w-50 mx-auto">
+                            <p class="card-text">
+                                <small class="text-muted fs-6">{{post.fecha}} - Posted by
+                                    {{post.autor}} -
+                                    <span role="button" [routerLink]="['/category', post.categoria.toLowerCase()]">
+                                        {{post.categoria}}
+                                    </span>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" *ngIf="impar === true">
+                        <div class="card-body text-center">
+                            <h4 role="button" [routerLink]="['/post', post.id]" class="card-title">
+                                {{post.titulo}}
+                            </h4>
+                            <hr class="w-50 mx-auto">
+                            <p class="card-text">{{post.texto}}</p>
+                            <hr class="w-50 mx-auto">
+                            <p class="card-text">
+                                <small class="text-muted fs-6">{{post.fecha}} - Posted by {{post.autor}} -
+                                    <span role="button" [routerLink]="['/category', post.categoria.toLowerCase()]">
+                                        {{post.categoria}}
+                                    </span>
+                                </small>
+                            </p>
+                        </div>
+                        <figure>
+                            <img [src]="post.imagen" class="imagencita card-img-bottom" [alt]="post.titulo"
+                                [routerLink]="['/post', post.id]" role="button">
+                        </figure>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</div>

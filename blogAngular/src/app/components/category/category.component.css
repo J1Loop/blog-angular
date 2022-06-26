@@ -1,0 +1,11 @@
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+ 
+.res-img {
+    width: 300px;
+    max-height: 300px;
+}

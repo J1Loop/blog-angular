@@ -1,0 +1,33 @@
+<nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-2 border-secondary shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-3" [routerLink]="['/home']">My Blog App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" [routerLink]="['/home']">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/new']">Nuevo Post</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        Categorías
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li *ngFor="let categoria of arrCats"><a class="dropdown-item"
+                                [routerLink]="['/category', categoria.titulo.toLowerCase()]"> {{ categoria.titulo }}</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

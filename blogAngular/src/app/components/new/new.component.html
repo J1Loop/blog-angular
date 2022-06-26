@@ -1,0 +1,94 @@
+<div class="container mt-5">
+    <h1 class="pt-5">Formulario de nuevo post.</h1>
+    <hr class="mb-5">
+
+    <form class="border-secondary border-1 border rounded-3 shadow p-4" [formGroup]="newPostForm"
+        (ngSubmit)="getDataForm()">
+
+        <div class="my-2 form-floating">
+            <input class="form-control" type="text" id="titulo" formControlName="titulo" placeholder="">
+            <label for="titulo" class="form-label">Título del post</label>
+
+            <p class="text-danger" *ngIf="isUserRetarded('titulo','required')">
+                El campo es obligatorio.
+            </p>
+            <p class="text-danger" *ngIf="isUserRetarded('titulo','minlength')">
+                El título es demasiado corto.
+            </p>
+            <p class="text-danger" *ngIf="isUserRetarded('titulo','maxlength')">
+                El título es demasiado largo.
+            </p>
+        </div>
+
+        <div class="my-2 form-floating">
+            <input class="form-control" type="text" id="autor" formControlName="autor" placeholder="">
+            <label for="autor" class="form-label">Autor</label>
+
+            <p class="text-danger" *ngIf="isUserRetarded('autor','required')">
+                El campo es obligatorio.
+            </p>
+            <p class="text-danger" *ngIf="isUserRetarded('autor','minlength')">
+                El nombre del autor es demasiado corto.
+            </p>
+            <p class="text-danger" *ngIf="isUserRetarded('autor','maxlength')">
+                El nombre del autor es demasiado largo.
+            </p>
+        </div>
+
+        <div class="my-2 form-floating">
+            <input class="form-control" type="text" id="imagen" formControlName="imagen" placeholder="">
+            <label for="imagen" class="form-label">Imagen del post</label>
+
+            <p class="text-danger" *ngIf="isUserRetarded('imagen','required')">
+                El campo es obligatorio.
+            </p>
+
+            <p class="text-danger" *ngIf="isUserRetarded('imagen','pattern')">
+                La url de la imagen no es válida. --><a target="_blank"
+                    href="https://regexr.com/6og51">https://regexr.com/6og51</a>
+            </p>
+
+        </div>
+
+        <div class="my-4">
+            <label for="categoria" class="form-label">Selecciona una categoría</label>
+            <select class="form-select" id="categoria" formControlName="categoria">
+                <option value="">Selecciona una categoría</option>
+                <option *ngFor="let categoria of arrCats" [value]="categoria.titulo">
+                    {{categoria.titulo}}
+                </option>
+            </select>
+            <p class="text-danger" *ngIf="isUserRetarded('categoria','required')">
+                Por favor, selecciona una categoría.
+            </p>
+        </div>
+
+
+        <div class="my-4 form-floating">
+            <textarea class="form-control" id="texto" formControlName="texto" maxlength="120" style="height: 90px"
+                placeholder=""></textarea>
+            <label for="texto" class="form-label">Introduce un breve texto</label>
+
+            <p class="text-danger" *ngIf="isUserRetarded('texto','required')">
+                El campo es obligatorio.
+            </p>
+            <p class="text-danger" *ngIf="isUserRetarded('texto','minlength')">
+                El texto introducido es demasiado corto.
+            </p>
+            <p class="text-danger" *ngIf="isUserRetarded('texto','maxlength')">
+                El texto introducido es demasiado largo.
+            </p>
+        </div>
+
+        <div class="my-2 form-floating">
+            <input class="form-control" type="date" id="fecha" formControlName="fecha">
+            <label for="fecha" class="form-label">Selecciona una fecha</label>
+
+            <p class="text-danger" *ngIf="isUserRetarded('fecha','required')">
+                El campo es obligatorio.
+            </p>
+        </div>
+
+        <input class=" btn btn-success mt-2" type="submit" value="Crear Post" [disabled]="!newPostForm.valid">
+    </form>
+</div>
