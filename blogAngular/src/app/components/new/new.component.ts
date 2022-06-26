@@ -65,6 +65,7 @@ export class NewComponent implements OnInit {
       this.router.navigate(['/new']);
       alert('No se ha podido agregar.')
     }
+
   }
 
   isUserRetarded(pControlName: string, pErrorName: string): boolean {

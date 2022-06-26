@@ -86,12 +86,13 @@ export class PostService {
         imagen: 'https://picsum.photos/id/211/200/300',
         fecha: '28-02-2023',
         categoria: 'Actividades'
-      }
+      },
     ];
 
   }
 
   getAllPosts(): Post[] {
+    console.log(this.arrPost);
     return this.arrPost;
   }
 
@@ -103,13 +104,22 @@ export class PostService {
     return this.arrPost.find(post => post.id === pId);
   }
 
+  getByCategory(pCategory: string): Post | any {
+    return this.arrPost.filter(post => post.categoria === pCategory);
+  }
+
   addPost(pForm: any): boolean | any {
     pForm.id = this.postID;
     let pushReturnIndex = this.arrPost.push(pForm);
     this.postID++
     // console.log(this.arrPost, 'NEXT_ID ' + this.postID);
-
     return (pushReturnIndex) ? true : false
+  }
+
+  deleteById(pId: number) {
+    this.arrPost = this.arrPost.filter(post => post.id !== pId);
+    // console.log(this.arrPost);
+    this.getAllPosts();
   }
 
 
